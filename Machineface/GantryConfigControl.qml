@@ -72,6 +72,62 @@ ColumnLayout {
                 stepSize: 0.05
                 halPin.direction: HalPin.IO
             }
+
+            Label {
+                text: qsTr("Z Left back offset:")
+            }
+
+            HalSpinBox {
+                name: "offset-left-back"
+                suffix: "mm"
+                minimumValue: 0.0
+                maximumValue: 999.9
+                decimals: 3
+                stepSize: 0.05
+                halPin.direction: HalPin.IO
+            }
+
+            Label {
+                text: qsTr("Z Right back offset:")
+            }
+
+            HalSpinBox {
+                name: "offset-right-back"
+                suffix: "mm"
+                minimumValue: 0.0
+                maximumValue: 999.9
+                decimals: 3
+                stepSize: 0.05
+                halPin.direction: HalPin.IO
+            }
+
+            Label {
+                text: qsTr("Z Left front offset:")
+            }
+
+            HalSpinBox {
+                name: "offset-left-front"
+                suffix: "mm"
+                minimumValue: 0.0
+                maximumValue: 999.9
+                decimals: 3
+                stepSize: 0.05
+                halPin.direction: HalPin.IO
+            }
+
+            Label {
+                text: qsTr("Z Right front offset:")
+            }
+
+            HalSpinBox {
+                name: "offset-right-front"
+                suffix: "mm"
+                minimumValue: 0.0
+                maximumValue: 999.9
+                decimals: 3
+                stepSize: 0.05
+                halPin.direction: HalPin.IO
+            }
         }
     }
 }
