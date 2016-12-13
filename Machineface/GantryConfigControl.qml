@@ -39,7 +39,7 @@ ColumnLayout {
             columns: 2
 
             Label {
-                text: qsTr("Left offset:")
+                text: qsTr("Y Left offset:")
             }
 
             HalSpinBox {
@@ -54,40 +54,12 @@ ColumnLayout {
             }
 
             Label {
-                text: qsTr("Right offset:")
+                text: qsTr("Y Right offset:")
             }
 
             HalSpinBox {
                 Layout.fillWidth: true
                 name: "offset-right"
-                suffix: "mm"
-                minimumValue: 0.0
-                maximumValue: 999.9
-                decimals: 3
-                stepSize: 0.05
-                halPin.direction: HalPin.IO
-            }
-
-            Label {
-                text: qsTr("Z Left back offset:")
-            }
-
-            HalSpinBox {
-                name: "offset-left-back"
-                suffix: "mm"
-                minimumValue: 0.0
-                maximumValue: 999.9
-                decimals: 3
-                stepSize: 0.05
-                halPin.direction: HalPin.IO
-            }
-
-            Label {
-                text: qsTr("Z Right back offset:")
-            }
-
-            HalSpinBox {
-                name: "offset-right-back"
                 suffix: "mm"
                 minimumValue: 0.0
                 maximumValue: 999.9
@@ -103,10 +75,10 @@ ColumnLayout {
             HalSpinBox {
                 name: "offset-left-front"
                 suffix: "mm"
-                minimumValue: 0.0
+                minimumValue: -30.0
                 maximumValue: 999.9
                 decimals: 3
-                stepSize: 0.05
+                stepSize: 0.002
                 halPin.direction: HalPin.IO
             }
 
@@ -117,10 +89,38 @@ ColumnLayout {
             HalSpinBox {
                 name: "offset-right-front"
                 suffix: "mm"
-                minimumValue: 0.0
+                minimumValue: -30.0
                 maximumValue: 999.9
                 decimals: 3
-                stepSize: 0.05
+                stepSize: 0.002
+                halPin.direction: HalPin.IO
+            }
+
+            Label {
+                text: qsTr("Z Left back offset:")
+            }
+
+            HalSpinBox {
+                name: "offset-left-back"
+                suffix: "mm"
+                minimumValue: -30.0
+                maximumValue: 999.9
+                decimals: 3
+                stepSize: 0.002
+                halPin.direction: HalPin.IO
+            }
+
+            Label {
+                text: qsTr("Z Right back offset:")
+            }
+
+            HalSpinBox {
+                name: "offset-right-back"
+                suffix: "mm"
+                minimumValue: -30.0
+                maximumValue: 999.9
+                decimals: 3
+                stepSize: 0.002
                 halPin.direction: HalPin.IO
             }
         }
