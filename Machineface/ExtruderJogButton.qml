@@ -11,7 +11,7 @@ Button {
         if (distance !== 0) {
             jogDistancePin.value = distance
             jogDirectionPin.value = direction
-            jogTriggerPin.value = !jogTriggerPin.value
+            jogTriggerPin.value = true
         }
     }
     onPressedChanged: {
@@ -20,7 +20,7 @@ Button {
 
             if (pressed) {
                 _pressTime = Date.now()
-                jogContinousPin.value = true
+                jogContinuousPin.value = true
             }
             else {
                 var currentTime = Date.now()
@@ -33,13 +33,13 @@ Button {
                         checked = true
                     }
                     else {
-                        jogContinousPin.value = false
+                        jogContinuousPin.value = false
                         activated = false
                         checkable = false
                     }
                 }
                 else {
-                    jogContinousPin.value = false
+                    jogContinuousPin.value = false
                 }
             }
         }
