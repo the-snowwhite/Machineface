@@ -25,9 +25,14 @@ Tab {
                 id: velocityExtrusionControl
             }
 
-            GantryConfigControl {
+            Gantry2ConfigControl {
                 Layout.fillWidth: false
-                id: gantryConfigControl
+                id: gantry2ConfigControl
+            }
+
+            Gantry4ConfigControl {
+                Layout.fillWidth: false
+                id: gantry4ConfigControl
             }
 
             Label {

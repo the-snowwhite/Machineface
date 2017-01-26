@@ -9,7 +9,7 @@ import Machinekit.Service 1.0
 
 ColumnLayout {
     id: root
-    property string labelName: "Gantry Configuration"
+    property string labelName: "Y Gantry Configuration"
     property bool wasConnected: false
 
     visible: halRemoteComponent.ready || wasConnected
@@ -19,7 +19,7 @@ ColumnLayout {
         halrcmdUri: halrcmdService.uri
         halrcompUri: halrcompService.uri
         ready: (halrcmdService.ready && halrcompService.ready) || connected
-        name: "gantry-config"
+        name: "gantry2-config"
         containerItem: container
         create: false
         onErrorStringChanged: console.log(errorString)
@@ -49,7 +49,7 @@ ColumnLayout {
                 minimumValue: 0.0
                 maximumValue: 999.9
                 decimals: 3
-                stepSize: 0.05
+                stepSize: 0.01
                 halPin.direction: HalPin.IO
             }
 
@@ -64,63 +64,7 @@ ColumnLayout {
                 minimumValue: 0.0
                 maximumValue: 999.9
                 decimals: 3
-                stepSize: 0.05
-                halPin.direction: HalPin.IO
-            }
-
-            Label {
-                text: qsTr("Z Left front offset:")
-            }
-
-            HalSpinBox {
-                name: "offset-left-front"
-                suffix: "mm"
-                minimumValue: -30.0
-                maximumValue: 999.9
-                decimals: 3
-                stepSize: 0.002
-                halPin.direction: HalPin.IO
-            }
-
-            Label {
-                text: qsTr("Z Right front offset:")
-            }
-
-            HalSpinBox {
-                name: "offset-right-fron"
-                suffix: "mm"
-                minimumValue: -30.0
-                maximumValue: 999.9
-                decimals: 3
-                stepSize: 0.002
-                halPin.direction: HalPin.IO
-            }
-
-            Label {
-                text: qsTr("Z Left back offset:")
-            }
-
-            HalSpinBox {
-                name: "offset-left-back"
-                suffix: "mm"
-                minimumValue: -30.0
-                maximumValue: 999.9
-                decimals: 3
-                stepSize: 0.002
-                halPin.direction: HalPin.IO
-            }
-
-            Label {
-                text: qsTr("Z Right back offset:")
-            }
-
-            HalSpinBox {
-                name: "offset-right-back"
-                suffix: "mm"
-                minimumValue: -30.0
-                maximumValue: 999.9
-                decimals: 3
-                stepSize: 0.002
+                stepSize: 0.01
                 halPin.direction: HalPin.IO
             }
         }

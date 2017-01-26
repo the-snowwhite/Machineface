@@ -9,7 +9,7 @@ import Machinekit.Service 1.0
 
 ColumnLayout {
     id: root
-    property string labelName: "Gantry Configuration"
+    property string labelName: "Z Gantry Configuration"
     property bool wasConnected: false
 
     visible: halRemoteComponent.ready || wasConnected
@@ -19,7 +19,7 @@ ColumnLayout {
         halrcmdUri: halrcmdService.uri
         halrcompUri: halrcompService.uri
         ready: (halrcmdService.ready && halrcompService.ready) || connected
-        name: "gantry-config"
+        name: "gantry4-config"
         containerItem: container
         create: false
         onErrorStringChanged: console.log(errorString)
@@ -39,36 +39,6 @@ ColumnLayout {
             columns: 2
 
             Label {
-                text: qsTr("Y Left offset:")
-            }
-
-            HalSpinBox {
-                Layout.fillWidth: true
-                name: "offset-left"
-                suffix: "mm"
-                minimumValue: 0.0
-                maximumValue: 999.9
-                decimals: 3
-                stepSize: 0.05
-                halPin.direction: HalPin.IO
-            }
-
-            Label {
-                text: qsTr("Y Right offset:")
-            }
-
-            HalSpinBox {
-                Layout.fillWidth: true
-                name: "offset-right"
-                suffix: "mm"
-                minimumValue: 0.0
-                maximumValue: 999.9
-                decimals: 3
-                stepSize: 0.05
-                halPin.direction: HalPin.IO
-            }
-
-            Label {
                 text: qsTr("Z Left front offset:")
             }
 
@@ -78,7 +48,7 @@ ColumnLayout {
                 minimumValue: -30.0
                 maximumValue: 999.9
                 decimals: 3
-                stepSize: 0.002
+                stepSize: 0.005
                 halPin.direction: HalPin.IO
             }
 
@@ -87,12 +57,12 @@ ColumnLayout {
             }
 
             HalSpinBox {
-                name: "offset-right-fron"
+                name: "offset-right-front"
                 suffix: "mm"
                 minimumValue: -30.0
                 maximumValue: 999.9
                 decimals: 3
-                stepSize: 0.002
+                stepSize: 0.005
                 halPin.direction: HalPin.IO
             }
 
@@ -106,7 +76,7 @@ ColumnLayout {
                 minimumValue: -30.0
                 maximumValue: 999.9
                 decimals: 3
-                stepSize: 0.002
+                stepSize: 0.005
                 halPin.direction: HalPin.IO
             }
 
@@ -120,7 +90,7 @@ ColumnLayout {
                 minimumValue: -30.0
                 maximumValue: 999.9
                 decimals: 3
-                stepSize: 0.002
+                stepSize: 0.005
                 halPin.direction: HalPin.IO
             }
         }
