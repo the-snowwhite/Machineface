@@ -28,7 +28,7 @@ ColumnLayout {
 
     ColumnLayout {
         id: container
-        enabled:  halRemoteComponent.connected
+        enabled:  halRemoteComponent.connected 
         Layout.fillWidth: true
 
         Label {
