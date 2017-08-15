@@ -19,7 +19,7 @@
         <file>Machineface/FanControl.qml</file>
         <file>Machineface/LightControl.qml</file>
         <file>Machineface/VelocityExtrusionControl.qml</file>
-        <file>Machineface/Gantry2ConfigControl.qml</file>
+        <file>Machineface/GantryConfigControl.qml</file>
         <file>Machineface/Gantry4ConfigControl.qml</file>
         <file>Machineface/VideoTab.qml</file>
         <file>Machineface/ApplicationMenu.qml</file>
