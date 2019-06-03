@@ -26,10 +26,8 @@ import QtQuick.Window 2.0
 ApplicationWindow {
     id: applicationWindow
 
-    visibility: (Qt.platform.os == "android") ? "FullScreen" : "AutomaticVisibility"
+    visibility: (Qt.platform.os === "android") ? ApplicationWindow.FullScreen: ApplicationWindow.AutomaticVisibility
     visible: true
-    x: (Qt.platform.os == "android") ? 0 : (Screen.width - width ) / 2
-    y: (Qt.platform.os == "android") ? 0 : (Screen.height - height ) / 2
     width: (Qt.platform.os == "android") ? Screen.width : Screen.width * 0.7
     height: (Qt.platform.os == "android") ? Screen.height : Screen.height * 0.7
     title: connectionWindow.title
@@ -42,5 +40,3 @@ ApplicationWindow {
         anchors.fill: parent
     }
 }
-
-

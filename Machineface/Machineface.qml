@@ -36,9 +36,9 @@ ServiceWindow {
     height: 600
     title: applicationCore.applicationName + (d.machineName == "" ? "" :" - " +  d.machineName)
 
-    Item {
+    QtObject {
         id: d
-        property string machineName: applicationCore.status.config.name
+        readonly property string machineName: applicationCore.status.config.name
     }
 
     FontLoader {
@@ -54,11 +54,6 @@ ServiceWindow {
     Service {
         id: halrcmdService
         type: "halrcmd"
-    }
-
-    Service {
-        id: videoService
-        type: "video"
     }
 
     ApplicationCore {
@@ -113,7 +108,7 @@ ServiceWindow {
         anchors.right: parent.right
         anchors.top: parent.top
         anchors.bottom: applicationProgressBar.top
-        width: parent.width * 0.25
+        width: parent.width * 0.20
         anchors.margins: Screen.pixelDensity
     }
 
